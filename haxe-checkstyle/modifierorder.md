@@ -18,7 +18,8 @@ Checks that the order of modifiers conforms to the standards.
             "PUBLIC_PRIVATE",
             "STATIC",
             "INLINE",
-            "DYNAMIC"
+            "DYNAMIC",
+            "FINAL"
         ]
     }
 }
@@ -40,10 +41,10 @@ override public function close() {}
 inline public static var COUNT:Int = 1;
 ```
 
-{{site.data.alerts.error}} Invalid access modifier order: COUNT (modifier: PUBLIC_PRIVATE) {{site.data.alerts.end}}
+{{site.data.alerts.error}} modifier order for field "COUNT" is "inline public static" but should be "public static inline" {{site.data.alerts.end}}
 
 ```java
 public override function close() {}
 ```
 
-{{site.data.alerts.error}} Invalid access modifier order: close (modifier: OVERRIDE) {{site.data.alerts.end}}
+{{site.data.alerts.error}} modifier order for field "close" is "public override" but should be "override public" {{site.data.alerts.end}}
